@@ -61,3 +61,11 @@ def view_all(expenses):
     for i, e in enumerate(expenses, 1):
         print(f"{e['date']} | {e['description']} | ${e['amount']:.2f} | [{e['category']}]")
     print("-" * 50)
+
+def view_total(expenses):
+    if not expenses:
+        print("No expenses yet.")
+        return
+    totals = {}
+    for e in expenses:
+        totals[e['category']] = totals.get(e['category'], 0) + e['amount']
