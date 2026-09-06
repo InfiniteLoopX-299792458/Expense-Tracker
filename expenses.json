@@ -1,0 +1,14 @@
+[
+  {
+    "description": "amount",
+    "amount": 50.0,
+    "category": "Food",
+    "date": "2026-09-06 23:50"
+  },
+  {
+    "description": "bill",
+    "amount": 100.0,
+    "category": "Bills",
+    "date": "2026-09-06 23:51"
+  }
+]
