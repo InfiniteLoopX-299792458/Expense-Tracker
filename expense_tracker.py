@@ -69,3 +69,36 @@ def view_total(expenses):
     totals = {}
     for e in expenses:
         totals[e['category']] = totals.get(e['category'], 0) + e['amount']
+
+    print("\nTotal Expenses by Category:")
+    print("-" * 30)
+    for cat, total in totals.items():
+        print(f"{cat}: ${total:.2f}")
+    print("-" * 30)
+
+def main():
+    expenses = load_data()
+    while True:
+        print("\n" + "="*40)
+        print("Expense Tracker")
+        print("="*40)
+        print("1. Add expenses")
+        print("2. View all expenses")
+        print("3. View total expenses by category")
+        print("4. Exit")
+        choice = input("Choose an option (1-4): ").strip()
+
+        if choice == "1":
+            add_expense(expenses)
+        elif choice == "2":
+            view_all(expenses)
+        elif choice == "3":
+            view_total(expenses)
+        elif choice == "4":
+            print("Bye! Your data is saved.")
+            break
+        else:
+            print("❌ Invalid choice. Please choose 1-4.")
+
+if __name__ == "__main__":
+    main()
